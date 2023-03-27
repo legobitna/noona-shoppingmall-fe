@@ -2,9 +2,9 @@ import axios from "axios";
 
 const LOCAL_BACKEND = process.env.REACT_APP_LOCAL_BACKEND;
 const PROD_BACKEND = process.env.REACT_APP_PROD_BACKEND;
-
+const BACKEND_PROXY = process.env.REACT_APP_BACKEND_PROXY;
 const api = axios.create({
-  baseURL: PROD_BACKEND,
+  baseURL: BACKEND_PROXY,
   headers: {
     "Content-Type": "application/json",
     authorization: `Bearer ${sessionStorage.getItem("token")}`,
