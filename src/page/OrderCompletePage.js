@@ -18,7 +18,12 @@ const OrderCompletePage = () => {
     );
   return (
     <Container className="confirmation-page">
-      <img src="/image/greenCheck.png" width={100} className="check-image" />
+      <img
+        src="/image/greenCheck.png"
+        width={100}
+        className="check-image"
+        alt="greenCheck.png"
+      />
       <h2>예약이 완료됬습니다!</h2>
       <div>예약번호:{orderNum}</div>
       <div>

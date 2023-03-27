@@ -70,7 +70,7 @@ const ProductDetail = () => {
     <Container className="product-detail-card">
       <Row>
         <Col sm={6}>
-          <img src={selectedProduct.image} className="w-100" />
+          <img src={selectedProduct.image} className="w-100" alt="image" />
         </Col>
         <Col className="product-info-area" sm={6}>
           <div className="product-info">{selectedProduct.name}</div>

@@ -31,7 +31,6 @@ const AdminOrderPage = () => {
     "Address",
     "Total Price",
     "Status",
-    ,
   ];
 
   useEffect(() => {

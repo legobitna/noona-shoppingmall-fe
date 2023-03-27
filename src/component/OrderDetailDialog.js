@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Modal, Button, Row, Col, Badge, Table } from "react-bootstrap";
+import { Form, Modal, Button, Col, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import "../style/adminOrder.style.css";

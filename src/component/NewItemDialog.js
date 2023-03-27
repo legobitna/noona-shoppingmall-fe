@@ -240,6 +240,7 @@ const NewItemDialog = ({ mode }) => {
             id="uploadedimage"
             src={formData.image}
             className="upload-image mt-2"
+            alt="uploadedimage"
           ></img>
         </Form.Group>
 
