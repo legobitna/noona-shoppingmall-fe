@@ -119,10 +119,6 @@ const NewItemDialog = ({ mode }) => {
     }
   }, [showItemDialog]);
 
-  useEffect(() => {
-    dispatch(commonUiActions.showToastMessage(error, "error"));
-  }, [error]);
-
   return (
     <Modal show={showItemDialog} onHide={handleClose}>
       <Modal.Header closeButton>
