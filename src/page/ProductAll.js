@@ -20,12 +20,6 @@ const ProductAll = () => {
     );
   }, [query]);
 
-  useEffect(() => {
-    if (error && error !== "") {
-      dispatch(commonUiActions.showToastMessage(error, "error"));
-    }
-  }, [error]);
-
   return (
     <Container>
       <Row>

@@ -1,6 +1,5 @@
 import api from "../utils/api";
 import * as types from "../constants/product.constants";
-import { toast } from "react-toastify";
 import { commonUiActions } from "./commonUiAction";
 
 const getProductList = (query) => async (dispatch) => {
@@ -13,6 +12,7 @@ const getProductList = (query) => async (dispatch) => {
     dispatch({ type: types.PRODUCT_GET_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({ type: types.PRODUCT_GET_FAIL, payload: error.error });
+    dispatch(commonUiActions.showToastMessage(error.error, "error"));
   }
 };
 const getProductDetail = (id) => async (dispatch) => {
@@ -26,6 +26,7 @@ const getProductDetail = (id) => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: types.GET_PRODUCT_DETAIL_FAIL, payload: error.error });
+    dispatch(commonUiActions.showToastMessage(error.error, "error"));
   }
 };
 
@@ -42,6 +43,7 @@ const createProduct = (formData) => async (dispatch) => {
     dispatch(getProductList({ page: 1 }));
   } catch (error) {
     dispatch({ type: types.PRODUCT_CREATE_FAIL, payload: error.error });
+    dispatch(commonUiActions.showToastMessage(error.error, "error"));
   }
 };
 const deleteProduct = (id) => async (dispatch) => {
@@ -57,6 +59,7 @@ const deleteProduct = (id) => async (dispatch) => {
     dispatch(getProductList({ page: 1 }));
   } catch (error) {
     dispatch({ type: types.PRODUCT_DELETE_FAIL, payload: error.error });
+    dispatch(commonUiActions.showToastMessage(error.error, "error"));
   }
 };
 
@@ -75,6 +78,7 @@ const editProduct = (formData, id) => async (dispatch) => {
     dispatch(getProductList({ page: 1, name: "" }));
   } catch (error) {
     dispatch({ type: types.PRODUCT_EDIT_FAIL, payload: error.error });
+    dispatch(commonUiActions.showToastMessage(error.error, "error"));
   }
 };
 

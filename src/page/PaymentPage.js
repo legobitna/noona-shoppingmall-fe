@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { commonUiActions } from "../action/commonUiAction";
 import { cc_expires_format } from "../utils/number";
-
+import { INITIALIZE_ORDER_ERROR } from "../constants/order.constants";
 const PaymentPage = () => {
   const dispatch = useDispatch();
   const { cartList, totalPrice } = useSelector((state) => state.cart);
@@ -41,10 +41,6 @@ const PaymentPage = () => {
       }
     }
   }, [orderNum]);
-
-  useEffect(() => {
-    dispatch(commonUiActions.showToastMessage(error, "error"));
-  }, [error]);
 
   const handleSubmit = (event) => {
     event.preventDefault();

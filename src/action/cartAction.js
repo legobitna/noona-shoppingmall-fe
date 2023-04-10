@@ -21,6 +21,7 @@ const addToCart =
       );
     } catch (error) {
       dispatch({ type: types.ADD_TO_CART_FAIL, payload: error.error });
+      dispatch(commonUiActions.showToastMessage(error.error, "error"));
     }
   };
 
@@ -36,6 +37,7 @@ const getCartList = () => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: types.GET_CART_LIST_FAIL, payload: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
   }
 };
 const deleteCartItem = (id) => async (dispatch) => {
@@ -51,6 +53,7 @@ const deleteCartItem = (id) => async (dispatch) => {
     dispatch(getCartList());
   } catch (error) {
     dispatch({ type: types.DELETE_CART_ITEM_FAIL, payload: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
   }
 };
 
@@ -66,6 +69,7 @@ const updateQty = (id, value) => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: types.UPDATE_CART_ITEM_FAIL, payload: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
   }
 };
 const getCartQty = () => async (dispatch) => {
@@ -76,6 +80,7 @@ const getCartQty = () => async (dispatch) => {
     dispatch({ type: types.GET_CART_QTY_SUCCESS, payload: response.data.qty });
   } catch (error) {
     dispatch({ type: types.GET_CART_QTY_FAIL, payload: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
   }
 };
 export const cartActions = {

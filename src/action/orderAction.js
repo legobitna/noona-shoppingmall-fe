@@ -16,6 +16,7 @@ const createOrder = (payload) => async (dispatch) => {
     dispatch(cartActions.getCartQty());
   } catch (error) {
     dispatch({ type: types.CREATE_ORDER_FAIL, payload: error.error });
+    dispatch(commonUiActions.showToastMessage(error.error, "error"));
   }
 };
 
@@ -29,6 +30,7 @@ const getOrder = () => async (dispatch) => {
     dispatch({ type: types.GET_ORDER_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({ type: types.GET_ORDER_FAIL, error: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
   }
 };
 const getOrderList = (query) => async (dispatch) => {
@@ -46,6 +48,7 @@ const getOrderList = (query) => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: types.GET_ORDER_LIST_FAIL, error: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
   }
 };
 
@@ -68,6 +71,7 @@ const updateOrder = (id, status) => async (dispatch) => {
     dispatch(getOrderList());
   } catch (error) {
     dispatch({ type: types.UPDATE_ORDER_FAIL, error: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
   }
 };
 

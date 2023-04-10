@@ -17,6 +17,8 @@ const loginWithToken = () => async (dispatch) => {
       type: commonTypes.INITIALIZE_FAIL,
     });
     dispatch({ type: types.LOGIN_FAIL, payload: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
+
     dispatch(logout());
   }
 };
@@ -34,6 +36,7 @@ const loginWithEmail = (payload) => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: types.LOGIN_FAIL, payload: error.error });
+    dispatch(commonUiActions.showToastMessage(error.error, "error"));
   }
 };
 const logout = () => async (dispatch) => {
@@ -57,6 +60,7 @@ const loginWithGoogle = (token) => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: types.GOOGLE_LOGIN_FAIL, payload: error });
+    dispatch(commonUiActions.showToastMessage(error, "error"));
   }
 };
 
@@ -74,6 +78,7 @@ const registerUser =
       navigate("/login");
     } catch (error) {
       dispatch({ type: types.REGISTER_USER_FAIL, payload: error.error });
+      dispatch(commonUiActions.showToastMessage(error.error, "error"));
     }
   };
 export const userActions = {

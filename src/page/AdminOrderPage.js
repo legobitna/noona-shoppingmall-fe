@@ -34,10 +34,6 @@ const AdminOrderPage = () => {
   ];
 
   useEffect(() => {
-    dispatch(commonUiActions.showToastMessage(error, "error"));
-  }, [error]);
-
-  useEffect(() => {
     dispatch(orderActions.getOrderList({ ...searchQuery }));
   }, [query]);
 

@@ -18,10 +18,6 @@ const AppLayout = ({ children }) => {
     dispatch(userActions.loginWithToken());
   }, []);
 
-  useEffect(() => {
-    dispatch(commonUiActions.showToastMessage(error, "error"));
-  }, [error]);
-
   if (!isFullyLoaded) {
     return null;
   }

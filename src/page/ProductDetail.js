@@ -45,12 +45,6 @@ const ProductDetail = () => {
   }, [cartError]);
 
   useEffect(() => {
-    if (error) {
-      dispatch(commonUiActions.showToastMessage(error, "error"));
-    }
-  }, [error]);
-
-  useEffect(() => {
     dispatch(productActions.getProductDetail(id));
   }, [id]);
 

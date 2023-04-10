@@ -36,10 +36,6 @@ const AdminProduct = () => {
   ];
 
   useEffect(() => {
-    dispatch(commonUiActions.showToastMessage(error, "error"));
-  }, [error]);
-
-  useEffect(() => {
     dispatch(productActions.getProductList({ ...searchQuery }));
   }, [query]);
 
