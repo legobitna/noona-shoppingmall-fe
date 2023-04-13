@@ -4,7 +4,6 @@ const initialState = {
   selectedProduct: null,
   loading: false,
   error: "",
-  showItemDialog: false,
   totalPageNum: 1,
 };
 
@@ -47,10 +46,6 @@ function productReducer(state = initialState, action) {
     }
     case types.SET_FILTERED_LIST: {
       return { ...state, filteredList: payload };
-    }
-
-    case types.TOGGLE_ITEM_DIALOG: {
-      return { ...state, showItemDialog: !state.showItemDialog };
     }
 
     default:

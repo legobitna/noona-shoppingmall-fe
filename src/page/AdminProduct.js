@@ -15,7 +15,7 @@ const AdminProduct = () => {
   const [query, setQuery] = useSearchParams();
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.product.productList);
-
+  const [showDialog, setShowDialog] = useState(false);
   const [searchQuery, setSearchQuery] = useState({
     page: query.get("page") || 1,
     name: query.get("name") || "",
@@ -61,7 +61,8 @@ const AdminProduct = () => {
 
   const handleClickNewItem = () => {
     setMode("new");
-    dispatch({ type: types.TOGGLE_ITEM_DIALOG });
+
+    setShowDialog(true);
   };
 
   const handlePageClick = ({ selected }) => {
@@ -112,7 +113,11 @@ const AdminProduct = () => {
         />
       </Container>
 
-      <NewItemDialog mode={mode} />
+      <NewItemDialog
+        mode={mode}
+        showDialog={showDialog}
+        setShowDialog={setShowDialog}
+      />
     </div>
   );
 };

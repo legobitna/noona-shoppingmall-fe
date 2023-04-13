@@ -18,9 +18,9 @@ const InitialFormData = {
   status: "active",
   price: 0,
 };
-const NewItemDialog = ({ mode }) => {
+const NewItemDialog = ({ mode, showDialog, setShowDialog }) => {
   const selectedProduct = useSelector((state) => state.product.selectedProduct);
-  const showItemDialog = useSelector((state) => state.product.showItemDialog);
+
   const { error } = useSelector((state) => state.product);
   const [formData, setFormData] = useState(
     mode === "new" ? { ...InitialFormData } : selectedProduct
@@ -29,7 +29,7 @@ const NewItemDialog = ({ mode }) => {
   const dispatch = useDispatch();
   const [stockError, setStockError] = useState(false);
   const handleClose = () => {
-    dispatch({ type: types.TOGGLE_ITEM_DIALOG });
+    setShowDialog(false);
     setFormData({ ...InitialFormData });
     setStock([]);
     setStockError(false);
@@ -103,7 +103,7 @@ const NewItemDialog = ({ mode }) => {
   };
 
   useEffect(() => {
-    if (showItemDialog) {
+    if (showDialog) {
       if (mode === "edit") {
         setFormData(selectedProduct);
         const sizeArray = Object.keys(selectedProduct.stock).map((size) => [
@@ -117,10 +117,10 @@ const NewItemDialog = ({ mode }) => {
         setStock([]);
       }
     }
-  }, [showItemDialog]);
+  }, [showDialog]);
 
   return (
-    <Modal show={showItemDialog} onHide={handleClose}>
+    <Modal show={showDialog} onHide={handleClose}>
       <Modal.Header closeButton>
         {mode === "new" ? (
           <Modal.Title>Create New Product</Modal.Title>
