@@ -61,7 +61,6 @@ const AdminProduct = () => {
 
   const handleClickNewItem = () => {
     setMode("new");
-
     setShowDialog(true);
   };
 

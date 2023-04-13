@@ -46,6 +46,7 @@ const NewItemDialog = ({ mode, showDialog, setShowDialog }) => {
       dispatch(
         productActions.createProduct({ ...formData, stock: totalStock })
       );
+      setShowDialog(false);
     } else {
       dispatch(
         productActions.editProduct(
