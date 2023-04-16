@@ -56,7 +56,7 @@ const AdminProduct = () => {
   const openEditForm = (product) => {
     setMode("edit");
     dispatch({ type: types.SET_SELECTED_PRODUCT, payload: product });
-    dispatch({ type: types.TOGGLE_ITEM_DIALOG });
+    setShowDialog(true);
   };
 
   const handleClickNewItem = () => {
