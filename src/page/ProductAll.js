@@ -8,7 +8,7 @@ import { commonUiActions } from "../action/commonUiAction";
 
 const ProductAll = () => {
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.product.error);
+
   const productList = useSelector((state) => state.product.productList);
   const [query, setQuery] = useSearchParams();
   const name = query.get("name");
