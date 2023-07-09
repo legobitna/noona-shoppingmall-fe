@@ -9,13 +9,7 @@ const loginWithToken = () => async (dispatch) => {
       type: types.LOGIN_SUCCESS,
       payload: response.data,
     });
-    dispatch({
-      type: commonTypes.INITIALIZE_SUCCESS,
-    });
   } catch (error) {
-    dispatch({
-      type: commonTypes.INITIALIZE_FAIL,
-    });
     dispatch({ type: types.LOGIN_FAIL, payload: error });
     dispatch(commonUiActions.showToastMessage(error, "error"));
 

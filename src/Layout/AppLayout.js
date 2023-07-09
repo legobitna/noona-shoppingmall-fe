@@ -13,14 +13,10 @@ const AppLayout = ({ children }) => {
   const dispatch = useDispatch();
 
   const { user, error } = useSelector((state) => state.user);
-  const { isFullyLoaded } = useSelector((state) => state.ui);
   useEffect(() => {
     dispatch(userActions.loginWithToken());
   }, []);
 
-  if (!isFullyLoaded) {
-    return null;
-  }
   return (
     <div>
       <ToastMessage />

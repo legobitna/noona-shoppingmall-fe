@@ -24,7 +24,7 @@ const Login = () => {
   const handleGoogleLogin = async (googleData) => {
     dispatch(userActions.loginWithGoogle(googleData.credential));
   };
-  console.log("ser", user);
+
   if (user) {
     navigate("/");
   }
