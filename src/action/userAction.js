@@ -11,7 +11,6 @@ const loginWithToken = () => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: types.LOGIN_FAIL, payload: error });
-    dispatch(commonUiActions.showToastMessage(error, "error"));
 
     dispatch(logout());
   }
