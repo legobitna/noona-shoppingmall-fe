@@ -14,7 +14,7 @@ const ProductDetail = () => {
   const selectedProduct = useSelector((state) => state.product.selectedProduct);
   const loading = useSelector((state) => state.product.loading);
   const error = useSelector((state) => state.product.error);
-  const cartError = useSelector((state) => state.cart.error);
+
   const [size, setSize] = useState("");
   const { id } = useParams();
   const [sizeError, setSizeError] = useState(false);
@@ -37,12 +37,6 @@ const ProductDetail = () => {
     if (sizeError) setSizeError(false);
     setSize(value);
   };
-
-  useEffect(() => {
-    if (cartError) {
-      dispatch(commonUiActions.showToastMessage(cartError, "error"));
-    }
-  }, [cartError]);
 
   useEffect(() => {
     dispatch(productActions.getProductDetail(id));
