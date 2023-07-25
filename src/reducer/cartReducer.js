@@ -18,9 +18,6 @@ function cartReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case GOOGLE_LOGIN_SUCCESS:
-    case LOGIN_SUCCESS:
-      return { ...state, cartItemCount: payload.cartItemCount };
     case LOGOUT: {
       return { ...state, cartItemCount: 0 };
     }
