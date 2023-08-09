@@ -1,74 +1,52 @@
-# Getting Started with Create React App
+# 쇼핑몰 프로젝트 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](https://hackmd.io/_uploads/rkzHitx3n.png)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![](https://hackmd.io/_uploads/BJrjsYg32.png)
 
 
-# Gist
-https://gist.github.com/legobitna/24cf11ae95d53c9cdcdc7b0040f059e9
+* 데모🖥:https://noona-shoppingmall.netlify.app/
+## 프로젝트의 목표
+한 달🗓 이라는 기간 안에 프론트엔드에서 백엔드까지 풀스택으로 개발할 수 있는 쇼핑몰 웹사이트! 
+## User Story 📖
+### 유저
+* 유저는 회원가입을 할 수 있다.
+* 유저는 이메일과 비밀번호로 로그인을 할 수 있다.
+* 유저는 구글로 로그인을 할 수 있다.
+
+### 상품
+* 관리자는 상품을 등록할 수 있다.
+* 관리자는 상품을 수정, 삭제할 수 있다. 
+* 관리자는 관리자 페이지에서 상품리스트를 볼 수 있다.
+* 유저는 랜딩페이지에서 상품을 볼 수 있다.
+* 유저는 상품 디테일 페이지를 볼 수 있다.
+* 유저는 상품을 이름으로 검색할 수 있다.
+
+### 카트
+* 유저는 사이즈를 선택 후 카트에 아이템을 담을 수 있다.
+* 유저는 카트페이지에서 담은 아이템 리스트를 볼 수 있다.
+* 유저는 카트에 각 아이템의 구매 개수를 수정할 수 있다.
+* 유저는 카트 아이템을 삭제할 수 있다.
+* 유저는 카트에 담긴 상품들의 총 가격을 볼 수 있다.
+
+### 주문
+* 유저는 상품주문시 연락처, 주소, 카드정보를 입력한다.
+* 유저는 주문하려는 상품들의 총 가격을 볼 수 있다.
+* 유저는 주문 완료후 주문 완료 페이지를 볼 수 있다.
+* 유저는 주문페이지에서 주문 내역을 볼 수 있다.
+* 관리자는 관리자 페이지에서 모든 유저의 주문 내역을 볼 수 있다.
+* 관리자는 주문 디테일을 볼 수 있다.
+* 관리자는 주문의 상태를 (준비중, 배송중, 완료, 환불) 수정할 수 있다.
+* 관리자는 주문번호로 주문을 검색할 수 있다.
+
+## 사용된 기술🏛
+### FE
+* React
+* Redux-thunk
+### BE
+* Nodejs
+* Express
+* MongoDB
+### Devops
+* AWS beanstalk 
+* Netlify 
