@@ -1,1 +1,2 @@
 /api/* http://bitnamall-env.eba-5cnfd9mf.ap-northeast-2.elasticbeanstalk.com/api/:splat 200
+/*    /index.html   200
